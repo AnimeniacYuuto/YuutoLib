@@ -15,14 +15,15 @@ buildscript {
     }
 }
 
+apply plugin: 'scala'
 apply plugin: 'forge'
 
-version = "1.7.10-1.1.a"
-group= "yuuto.quantumelectronics" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "QuantumElectronics"
+version = "1.7.10-1.0.0"
+group= "yuuto.lib" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "YuutoLib"
 
 minecraft {
-    version = "1.7.10-10.13.0.1197"
+    version = "1.7.10-10.13.4.1492-1.7.10"
 }
 
 dependencies {
