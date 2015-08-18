@@ -14,9 +14,12 @@ import net.minecraft.item.ItemStack
 abstract class ContainerAlt(val inventory:IInventory, val playerInventory:InventoryPlayer) extends Container{
     var playerInvStart:Int = 0;
     var playerInvEnd:Int = 0;
-    bindPlayerInventory(bindInventorySlots());
-    bindOtherSlots();
     
+    
+    def init(){
+      bindPlayerInventory(bindInventorySlots());
+      bindOtherSlots();
+    }
     def bindInventorySlots():Array[Int];
     def bindPlayerInventory(pos:Array[Int]){
       playerInvStart = this.inventorySlots.size();
