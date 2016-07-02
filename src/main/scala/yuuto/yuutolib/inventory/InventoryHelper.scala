@@ -18,12 +18,14 @@ object InventoryHelper {
     if(inv.getSizeInventory() < 1)
       return false;
     val tar:ISidedInventory = SidedInventoryWrapper.getWrapper(target);
-    val slots:Array[Int] = inv.getAccessibleSlotsFromSide(ForgeDirection.DOWN.ordinal());
+    val slots:Array[Int] = inv.getAccessibleSlotsFromSide(pullDirection.getOpposite.ordinal());
+    System.out.println("Pulling from "+pullDirection.getOpposite);
     var break:Boolean = false;
     for(i <- 0 until slots.length if(!break)){
-      if(inv.getStackInSlot(slots(i)) == null || inv.getStackInSlot(slots(i)).stackSize < 1){}
-      else if(!inv.canExtractItem(slots(i), inv.getStackInSlot(slots(i)), pullDirection.ordinal())){}
-      else if(mergeStack(inv, i,tar, max, pushDirection, simulate)){
+      val slot:Int = slots(i);
+      if(inv.getStackInSlot(slot) == null || inv.getStackInSlot(slot).stackSize < 1){}
+      else if(!inv.canExtractItem(slot, inv.getStackInSlot(slot), pullDirection.getOpposite.ordinal())){}
+      else if(mergeStack(inv, slot,tar, max, pushDirection.getOpposite, simulate)){
         return true;
       }
     }

@@ -23,7 +23,7 @@ group= "yuuto.lib" // http://maven.apache.org/guides/mini/guide-naming-conventio
 archivesBaseName = "YuutoLib"
 
 minecraft {
-    version = "1.7.10-10.13.4.1492-1.7.10"
+    version = "1.7.10-10.13.4.1614-1.7.10"
 }
 
 dependencies {
