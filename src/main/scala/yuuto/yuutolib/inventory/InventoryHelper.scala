@@ -19,7 +19,7 @@ object InventoryHelper {
       return false;
     val tar:ISidedInventory = SidedInventoryWrapper.getWrapper(target);
     val slots:Array[Int] = inv.getAccessibleSlotsFromSide(pullDirection.getOpposite.ordinal());
-    System.out.println("Pulling from "+pullDirection.getOpposite);
+    //System.out.println("Pulling from "+pullDirection.getOpposite);
     var break:Boolean = false;
     for(i <- 0 until slots.length if(!break)){
       val slot:Int = slots(i);
@@ -131,7 +131,7 @@ object InventoryHelper {
     return mergeStack(stack, InventoryWrapper.getWrapper(inv), simulate);
   }
   def mergeStack(stack:ItemStack, inv:IInventoryExtended, simulate:Boolean):Boolean={
-    System.out.println("Merging stack");
+    //System.out.println("Merging stack");
     if(stack.stackSize < 1)
       return false;
     var max:Int= Math.min(stack.getMaxStackSize(), inv.getInventoryStackLimit());

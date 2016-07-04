@@ -24,7 +24,7 @@ trait TBlockContainerRotatable extends ModBlockContainer{
   }
   
   override def initializeTile(tile:TileEntity, world:World, x:Int, y:Int, z:Int, player:EntityLivingBase, stack:ItemStack){
-    System.out.println("called initializer");
+    //System.out.println("called initializer");
     if(tile.isInstanceOf[TTileRotatableMachine])
       setRotation(tile.asInstanceOf[TTileRotatableMachine], world, x, y, z, player, stack);
     super.initializeTile(tile, world, x, y, z, player, stack);
